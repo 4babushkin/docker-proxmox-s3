@@ -8,11 +8,25 @@
 
 1. Само собой, имеем уже настроенный Proxmox VE
 2. На локальной машине ставим docker-machine (`brew install docker-machine` - если у вас MacOS)
+   * Linux
+   ```
+   curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
+   chmod +x /tmp/docker-machine &&
+   sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
+   ```
 3. Просаживаем плагин для работы с Proxmox:
+   * MacOS
    1. качаем от [сюда](https://github.com/lnxbil/docker-machine-driver-proxmox-ve/releases/download/v4/docker-machine-driver-proxmoxve.macos-amd64)
    2. даем права на запуск - `chmod +x docker-machine-driver-proxmoxve.macos-amd64`
    3. перемещаем рабочую папку - `mv docker-machine-driver-proxmoxve.macos-amd64 /usr/local/bin/docker-machine-driver-proxmoxve`
    4. проверяем, что работает плагин `docker-machine create -d proxmoxve --help` (должен появится листинг параметров плагина)
+   * Linux
+   1.
+   ```
+   curl -L https://github.com/lnxbil/docker-machine-driver-proxmox-ve/releases/download/v4/docker-machine-driver-proxmoxve.linux-amd64 >/tmp/docker-machine-driver-proxmoxve &&
+   chmod +x /tmp/docker-machine-driver-proxmoxve &&
+   sudo cp /tmp/docker-machine-driver-proxmoxve /usr/local/bin/docker-machine-driver-proxmoxve
+   ```
 4. качаем образ [докера](https://releases.rancher.com/os/v1.5.1/proxmoxve/rancheros-autoformat.iso) и заливаем его себе в Proxmox
 
 ## Использование
