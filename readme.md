@@ -9,7 +9,7 @@
 1. Само собой, имеем уже настроенный Proxmox VE
 2. На локальной машине ставим docker-machine (`brew install docker-machine` - если у вас MacOS)
    * Linux
-   ```
+   ```bash
    curl -L https://github.com/docker/machine/releases/download/v0.16.2/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine &&
    chmod +x /tmp/docker-machine &&
    sudo cp /tmp/docker-machine /usr/local/bin/docker-machine
@@ -22,7 +22,7 @@
    4. проверяем, что работает плагин `docker-machine create -d proxmoxve --help` (должен появится листинг параметров плагина)
    * Linux
    1.
-   ```
+   ```bash
    curl -L https://github.com/lnxbil/docker-machine-driver-proxmox-ve/releases/download/v4/docker-machine-driver-proxmoxve.linux-amd64 >/tmp/docker-machine-driver-proxmoxve &&
    chmod +x /tmp/docker-machine-driver-proxmoxve &&
    sudo cp /tmp/docker-machine-driver-proxmoxve /usr/local/bin/docker-machine-driver-proxmoxve
